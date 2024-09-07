@@ -1,0 +1,1313 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:wght@100;300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header CSS */
+
+/* General styles for the navbar */
+.navbar {
+  background-color: #333; /* Dark background for the navbar */
+  border-bottom: 2px solid #f9a825; /* Yellow line below the header */
+  padding: 0.5rem 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+/* Brand styles */
+.navbar-brand {
+  font-size: 1.75rem;
+  font-family: "Playfair Display", serif;
+}
+
+.brand-name {
+  color: white; /* 'Furni' in white */
+}
+
+.brand-highlight {
+  color: #f9a825; /* 'Shop' in yellow */
+}
+
+/* Toggler button styles for mobile */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  background-color: transparent; /* Transparent background */
+  padding: 0; /* Remove default padding */
+  position: relative;
+}
+
+/* Toggler icon styles */
+.navbar-toggler-icon::before {
+  content: "\2630"; /* Unicode for hamburger icon */
+  font-size: 1.5rem;
+  color: #f9a825; /* Yellow color */
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  content: "\2715"; /* Unicode for 'X' icon */
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  box-shadow: none; /* Removes black border */
+  outline: none; /* Removes default focus outline */
+}
+
+/* Navbar links */
+.nav-link {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #f9a825;
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  background-color: #333;
+  border: none;
+}
+
+.dropdown-item {
+  color: white; /* Dropdown items in white */
+  transition: color 0.3s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: white;
+  background-color: transparent; /* Keeps the background consistent */
+}
+
+/* User name in the dropdown */
+.nav-item.dropdown .nav-link.dropdown-toggle {
+  color: white; /* Ensure the username in dropdown on desktop is white */
+}
+
+.nav-item.dropdown .nav-link.dropdown-toggle:hover {
+  color: #f9a825; /* Hover effect for dropdown toggle */
+}
+
+/* Cart and other items */
+.nav-item {
+  margin: 0 0.5rem;
+}
+
+/* Styles for the underline effect on hover */
+.hover-underline::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f9a825;
+  transition: width .3s;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Apply underline hover effect to dropdown menu items */
+.dropdown-menu .dropdown-item::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f9a825;
+  transition: width .3s;
+}
+
+.dropdown-menu .dropdown-item:hover::after {
+  width: 100%;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: transparent; /* Removes background of the menu */
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .nav-link:hover {
+    color: #f9a825;
+  }
+
+  .navbar-collapse {
+    background-color: transparent; /* Ensures menu background is transparent */
+  }
+
+  .dropdown-menu {
+    background-color: transparent; /* Ensures dropdown menu background is transparent */
+  }
+}
+
+/* Adjustment for the header to not hide content */
+body {
+  padding-top: 70px; /* Adjust based on header height */
+}
+
+
+
+
+/* Footer Custom Styles */
+.footer {
+  width: 100%;
+  background-color: #212529; /* Dark background */
+  color: white;
+  padding: 40px 0;
+  text-align: left;
+}
+
+.footer .logo {
+  font-size: 2.5rem;
+  color: #f9a825; /* Bright yellow accent for logo */
+}
+
+.footer-bottom {
+  background-color: #333; /* Slightly darker shade for bottom section */
+  padding: 15px 0;
+  border-top: 1px solid #444;
+  width: 100%;
+  text-align: center;
+}
+
+.footer a {
+  color: #ddd; /* Light grey for links */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer a:hover {
+  color: #f9a825; /* Bright yellow on hover */
+  text-decoration: underline;
+  transform: translateY(-3px);
+}
+
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f9a825;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .footer .container {
+    text-align: center;
+  }
+
+  .footer .row {
+    flex-direction: column;
+  }
+
+  .footer .col-md-4, .footer .col-md-3 {
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+
+/* =================================
+======== page not found css ======= */
+.pnf {
+  height: 80vh; /* Center the content vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Primary font for content */
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.pnf-title {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #333; /* Dark color for the title */
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif; /* Elegant font for the title */
+}
+
+.pnf-heading {
+  font-size: 1.5rem;
+  color: #666; /* Grey color for the heading text */
+  margin-bottom: 1.5rem;
+}
+
+.pnf-btn {
+  background-color: #f9a825; /* Yellow button color */
+  color: #ffffff; /* White text on the button */
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.pnf-btn:hover {
+  background-color: #e0a800; /* Slightly darker yellow for hover effect */
+}
+
+/* ========================================= */
+
+/* =========contact us ========= */
+/* Contact Page Styles */
+.contactus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background for contrast */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  min-height: 100vh; /* Ensure full height for vertical centering */
+}
+
+.contact-image img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 600px;
+  text-align: center; /* Center text inside the contact-info div */
+}
+
+.contact-title {
+  background-color: #212529; /* Dark background to match footer and header */
+  color: #ffffff; /* Yellow color to match footer */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif; /* Match the header and footer */
+}
+
+.contact-description {
+  font-family: 'Poppins', sans-serif; /* Match the header and footer */
+  color: #333; /* Dark text color for readability */
+  margin-bottom: 20px;
+}
+
+.contact-detail {
+  font-family: 'Poppins', sans-serif; /* Match the header and footer */
+  color: #333; /* Dark text color for readability */
+  margin-bottom: 15px;
+}
+
+.contact-detail a {
+  color: #f9a825; /* Yellow color for links */
+  text-decoration: none;
+}
+
+.contact-detail a:hover {
+  text-decoration: underline;
+  color: #ffffff; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactus {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+}
+
+
+/* About Page Styles */
+.aboutus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background for contrast */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  min-height: 100vh; /* Ensure full height for vertical centering */
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.about-info {
+  flex: 1;
+  max-width: 600px;
+  text-align: center; /* Center text inside the about-info div */
+}
+
+.about-title {
+  background-color: #212529; /* Dark background to match footer and header */
+  color: #f9a825; /* Yellow color to match footer */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif; /* Font updated to Playfair Display */
+}
+
+.about-description {
+  font-family: 'Playfair Display', serif; /* Font updated to Playfair Display */
+  color: #333; /* Dark text color for readability */
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .aboutus {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-info {
+    text-align: center;
+  }
+}
+
+/* Privacy Policy Title Styling */
+.policy-title {
+  background-color: #212529; /* Dark background to match footer and header */
+  color: #ffffff; 
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif; /* Match the header and footer */
+  text-align: center; /* Center-align text */
+}
+
+/* General Styling for Privacy Policy Page */
+.policy-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.policy-container .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Playfair Display', serif; /* Consistent font style */
+}
+
+.policy-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .policy-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .policy-container .col-md-4,
+  .policy-container .col-md-6 {
+    text-align: center;
+  }
+
+  .policy-container img {
+    margin-bottom: 20px;
+  }
+}
+
+/* =============================== 
+====================Register Page*/
+.register-container {
+  min-height: 80vh; /* Reduce the minimum height to make the form fit better on the screen */
+  background-color: #f8f9fa; /* Light background for the registration section */
+  padding-top: 50px; /* Reduce the padding to prevent excessive space above the form */
+  padding-bottom: 50px; /* Add padding to balance the vertical alignment */
+}
+
+.register-form {
+  max-width: 500px;
+  width: 100%;
+  background-color: #ffffff; /* White background for the form */
+  font-family: 'Poppins, sans-serif'; /* Matches the font with the rest of the website */
+  color: #333; /* Text color */
+  padding: 20px; /* Add padding inside the form to make it look spacious */
+}
+
+.form-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+.btn-warning {
+  color: #ffffff; /* White text on the button */
+  font-weight: bold;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800; /* Slightly darker yellow for hover effect */
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    padding: 10px; /* Reduce padding on smaller screens to fit content better */
+    min-height: 70vh; /* Adjust the height for smaller screens */
+  }
+
+  .register-form {
+    padding: 15px; /* Reduce padding inside the form on smaller screens */
+  }
+}
+
+
+
+/*================================
+=============Spinner=============*/
+
+@keyframes spinner-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/*================================
+=============forgotPassword=============*/
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: #f9a825;
+  text-decoration: none;
+  font-family: 'Poppins, sans-serif';
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0; /* Remove default button padding */
+}
+
+.forgot-password-link:hover {
+  color: #e0a800; /* Slightly darker yellow for hover effect */
+  text-decoration: underline;
+}
+
+/* AdminMenu CSS */
+/* Ensure full responsiveness and prevent overflow */
+ html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.list-group-item {
+  padding: 1rem; /* Add padding to the list items */
+  margin-bottom: 0.5rem; /* Add margin at the bottom of each item */
+  border: 1px solid #ddd; /* Border color for list items */
+  border-radius: 0.25rem; /* Rounded corners for list items */
+  background-color: #333; /* Black background for list items */
+  color: #fff; /* White text color */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.list-group-item:hover {
+  background-color: #f9a825; /* Yellow background color on hover */
+  color: #000; /* Black text color on hover */
+}
+
+/* AdminDashboard CSS */
+.dashboard-content {
+  background-color: #fff; /* Background color for content */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 1rem; /* Adjust padding for mobile screens */
+  }
+
+  .dashboard-content {
+    margin: 0.5rem; /* Adjust margins for mobile screens */
+    padding: 1rem; /* Adjust padding for mobile screens */
+  }
+}
+
+//userMenu & userpages styles
+.container-fluid {
+  padding-left: 1rem; /* Adjust padding as needed */
+  padding-right: 1rem; /* Adjust padding as needed */
+}
+
+.card {
+  width: 100%; /* Make sure the card fits within its parent */
+  max-width: 100%; /* Prevent overflow beyond parent container */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.mb-3 {
+  margin-bottom: 1rem; /* Adjust spacing between elements */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0.5rem; /* Reduce padding on smaller screens */
+  }
+  
+  .card {
+    padding: 1rem; /* Adjust padding for smaller screens */
+    margin: 0; /* Ensure no horizontal overflow */
+  }
+
+  .col-md-3, .col-md-9 {
+    width: 100%; /* Stack columns vertically on smaller screens */
+    padding: 0; /* Remove padding to fit within mobile screen */
+  }
+
+  .dashboard-content, .profile-content, .orders-content {
+    padding: 1rem; /* Adjust padding for mobile responsiveness */
+  }
+}
+
+
+
+/**=====================================
+===================Create Category====**/
+
+/* CreateCategory CSS */
+
+/* General Styling */
+.manage-categories-heading {
+  font-family: 'Playfair Display', serif; /* Playfair Display font for the heading */
+  font-weight: bold;
+  color: #333; /* Dark text color */
+  margin-bottom: 1.5rem; /* Bottom margin */
+  text-align: center; /* Center align the heading */
+}
+
+/* Table Styling */
+.table {
+  background-color: #333; /* Dark background for table */
+  color: #fff; /* White text color */
+  border-radius: 0.5rem; /* Rounded corners for table */
+  width: 100%; /* Ensure table takes full width */
+  table-layout: fixed; /* Fixed layout to prevent overflow */
+  overflow: hidden; /* Hide overflow */
+}
+
+.table th, .table td {
+  vertical-align: middle; /* Center text vertically */
+  padding: 1rem; /* Padding for table cells */
+  border-color: #444; /* Border color for cells */
+  word-wrap: break-word; /* Prevent overflow of text */
+}
+
+.table th {
+  background-color: #444; /* Slightly darker for headers */
+  border-bottom: 2px solid #555; /* Border for headers */
+}
+
+.table td {
+  border-bottom: 1px solid #444; /* Border for cells */
+}
+
+/* Button Styling */
+.btn-warning {
+  background-color: #f9a825; /* Yellow background color */
+  border: none;
+  color: #333; /* Dark text color for better contrast */
+  border-radius: 0.3rem; /* Rounded corners for buttons */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-warning:hover {
+  background-color: #e6b800; /* Slightly darker yellow on hover */
+}
+
+.btn-danger {
+  background-color: #d9534f; /* Bootstrap's danger color */
+  border: none;
+  color: #fff; /* White text color */
+  border-radius: 0.3rem; /* Rounded corners for buttons */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-danger:hover {
+  background-color: #c9302c; /* Darker red on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 1rem !important; /* Adjust padding for smaller screens */
+  }
+
+  .row {
+    margin: 0 !important; /* Remove row margin to prevent overflow */
+  }
+
+  .col-md-3, .col-md-9 {
+    padding: 0.5rem !important; /* Reduce padding for smaller screens */
+  }
+
+  .table {
+    font-size: 0.875rem; /* Smaller font size for mobile */
+    width: 100%; /* Ensure table takes full width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  .btn {
+    font-size: 0.7rem; /* Smaller button font size */
+    padding: 0.25rem 0.5rem; /* Smaller button padding */
+    margin-bottom: 0; /* Remove bottom margin for alignment */
+    width: auto; /* Auto width to fit content */
+  }
+
+  .btn-group {
+    display: flex; /* Flexbox to align buttons in a row */
+    flex-wrap: nowrap; /* Prevent buttons from wrapping */
+    gap: 0.5rem; /* Add spacing between buttons */
+    justify-content: flex-start; /* Align buttons to the start */
+  }
+
+  .table-responsive {
+    overflow-x: hidden; /* Ensure no horizontal overflow */
+  }
+}
+
+
+
+/*=========category form=========*/
+/* General Form Styling */
+.category-form {
+  padding: 1.5rem; /* Padding around the form */
+  max-width: 400px; /* Limit max width on larger screens */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Input Styling */
+.form-control {
+  padding: 0.75rem; /* Adjust padding for input */
+  font-size: 1rem; /* Increase font size */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 0.25rem; /* Rounded corners */
+  transition: border-color 0.3s ease; /* Smooth transition on focus */
+  width: 100%; /* Ensure the input takes full width */
+}
+
+.form-control:focus {
+  border-color: #f9a825; /* Yellow border on focus */
+  box-shadow: 0 0 5px rgba(249, 168, 37, 0.5); /* Yellow shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #f9a825; /* Yellow background */
+  border: none;
+  color: #fff; /* White text */
+  padding: 0.75rem 1.25rem; /* Adjust padding for button */
+  font-size: 1rem; /* Increase font size */
+  border-radius: 0.25rem; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+  width: 100%; /* Ensure the button takes full width */
+}
+
+.btn-primary:hover {
+  background-color: #e6b800; /* Darker yellow on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .category-form {
+    padding: 1rem; /* Reduce padding on mobile */
+    max-width: 100%; /* Ensure form takes full width on mobile */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+
+  .form-control {
+    font-size: 0.875rem; /* Slightly smaller font size on mobile */
+    width: 100%; /* Ensure input takes full width on mobile */
+  }
+
+  .btn-primary {
+    width: 100%; /* Button takes full width on mobile */
+    font-size: 0.875rem; /* Slightly smaller font size on mobile */
+  }
+}
+
+
+/*============create product===============*/
+/* Heading Styling */
+.create-product-heading {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1.5rem;
+}
+
+/* Select Styling */
+.ant-select {
+  border: none;
+  box-shadow: none;
+  width: 100%; /* Ensure it takes full width of the container */
+}
+
+.ant-select-selector {
+  height: 3rem; /* Match the height of the button */
+  border: 1px solid #ccc; /* Default border color */
+}
+
+.ant-select-selector:focus {
+  border-color: #f9a825; /* Yellow color on focus */
+  box-shadow: 0 0 5px rgba(249, 168, 37, 0.5);
+}
+
+/* Button Styling */
+.upload-photo-btn {
+  display: inline-block;
+  background-color: #f9a825;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.upload-photo-btn:hover {
+  background-color: #e6b800; /* Slightly darker yellow on hover */
+}
+
+/* Input and Textarea Styling */
+.form-container {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.text-area {
+  height: 8rem; /* Adjust height for textarea */
+  resize: vertical;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .create-product-heading {
+    font-size: 1.5rem;
+  }
+
+  .upload-photo-btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .ant-select-selector {
+    height: 2.5rem; /* Adjust height for mobile */
+  }
+
+  .form-container {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .text-area {
+    height: 6rem; /* Adjust height for mobile */
+  }
+}
+
+
+
+/*============products===============*/
+/* Product Card Container */
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  max-width: 240px; /* Fixed card width */
+  margin: auto; /* Center the card within column */
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.product-card-img {
+  width: 100%; /* Make the image fit the width of the card */
+  height: 100%; /* Fixed height for images */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-bottom: 1px solid #ddd; /* Border below the image */
+}
+
+/* Card Body */
+.product-card-body {
+  padding: 1rem;
+}
+
+/* Title and Text Styling */
+.product-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-card-text {
+  font-size: 1rem;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .product-card-img {
+    height: 150px; /* Adjust height for mobile */
+  }
+
+  .product-card-title,
+  .product-card-text {
+    font-size: 0.875rem; /* Smaller font size for mobile */
+  }
+
+  /* Ensure cards are full width on mobile */
+  .product-card {
+    width: 100%;
+  }
+}
+
+
+
+/*============Home===============*/
+.filters-section {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.product-card-price {
+  color: #f9a825;
+  font-weight: bold;
+}
+
+.product-button {
+  padding: 5px 8px;
+  font-size: 0.75rem; /* Smaller text size */
+  white-space: nowrap;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px; /* Gap between buttons */
+}
+
+.product-button:hover {
+  background-color: #f9a825;
+  color: white;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .product-grid {
+    flex-direction: column;
+  }
+
+  .product-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Fix the filter button position */
+  .filter-icon-container {
+    position: fixed;
+    top: -47px;
+    right: 20px; /* Adjust as needed */
+    z-index: 9999;
+    display: block;
+  }
+
+  /* Filter button styling */
+  .filter-toggle-btn {
+    background-color: #f9a825;
+    border: none;
+    color: white;
+    font-size: 1rem; /* Slightly smaller icon size */
+    padding: 6px; /* Reduced padding for smaller button */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+
+  .button-group {
+    justify-content: space-around;
+  }
+
+  /* Center the heading with the filter button on the left */
+  .row {
+    position: relative;
+  }
+
+  .text-center {
+    text-align: center;
+    width: calc(100% - 50px); /* Adjust width to account for filter button */
+    margin-left: 30px; /* Space for filter button */
+  }
+
+  .navbar-toggler:not(.collapsed) ~ .filter-icon-container {
+    display: none;
+  }
+}
+
+/* Ensure the filter button is only shown on mobile screens */
+@media (min-width: 769px) {
+  .filter-icon-container {
+    display: none; /* Hide filter button on larger screens */
+  }
+}
+
+
+/*============Search Bar===============*/
+.search-container {
+  flex: 1;
+  max-width: 600px; /* Adjust this value as needed */
+  margin: 0 auto;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  margin-right: 10px; /* Add margin to create space between input and button */
+}
+
+.search-input:focus {
+  border-color: #f9a825;
+}
+
+.search-button {
+  background-color: #f9a825;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 150px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-button:hover {
+  background-color: #e08e05;
+}
+
+
+/*============Product Details===============*/
+/* Product Details Page Styling */
+.product-heading {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.product-label {
+  font-family: 'Playfair Display', serif;
+  color: #f9a825; /* Use the yellow color already used throughout the website */
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px; /* Added letter spacing for better readability */
+}
+
+.product-price {
+  font-weight: bold;
+  color: #e53935; /* Red color for price */
+}
+
+h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 1.1rem; /* Slightly larger font size */
+  line-height: 1.5; /* Increased line height for readability */
+  letter-spacing: 0.5px; /* Added letter spacing for clarity */
+  margin-bottom: 0.8rem;
+}
+
+.similar-products {
+  text-align: center;
+  color: black;
+  font-family: 'Playfair Display', serif;
+  margin-top:20px;
+  margin-bottom: 1rem;
+}
+
+.product-image-container {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.product-img {
+  max-width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .product-heading {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Adjusted for mobile */
+  }
+
+  .product-details-container {
+    flex-direction: column;
+  }
+
+  .product-image-container {
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+
+  .product-img {
+    width: 100%;
+    max-width: 300px; /* Adjust image size for mobile */
+    height:300px;
+    margin-top:20px;
+  }
+
+  .product-label,
+  h6 {
+    font-size: 1rem; /* Adjust text size for mobile */
+  }
+}
+
+/** add to cart button*/
+/* Add to Cart Button Styling */
+.add-to-cart-btn {
+  background-color: #f9a825; /* Use the yellow color from the website */
+  color: white; /* White text for contrast */
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #c79100; /* Darker yellow on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+.add-to-cart-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f9a825, 0 4px 10px rgba(0, 0, 0, 0.2); /* Focus effect */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .add-to-cart-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+}
+
+
+/**======cart styles======*/
+.description {
+  display: -webkit-box;           /* Makes the element behave like a block container */
+  -webkit-line-clamp: 3;          /* Limits to 3 lines */
+  -webkit-box-orient: vertical;   /* Ensures vertical orientation */
+  overflow: hidden;               /* Hides the overflowed text */
+  text-overflow: ellipsis;        /* Adds ellipsis (...) */
+}
+
+.name-cart {
+  display: -webkit-box;           /* Makes the element behave like a block container */
+  -webkit-line-clamp: 2;          /* Limits to 2 lines */
+  -webkit-box-orient: vertical;   /* Ensures vertical orientation */
+  overflow: hidden;               /* Hides the overflowed text */
+  text-overflow: ellipsis;        /* Adds ellipsis (...) */
+}
+
+.full-image {
+  max-width: 90%;   /* Set the image's maximum width to 90% of its container */
+  height: auto;     /* Maintain the aspect ratio */
+  border-radius: 8px; /* Optional: Add a subtle border radius for aesthetics */
+  margin: 0 auto;   /* Center the image if needed */
+  display: block;   /* Ensure the image behaves as a block-level element */
+}
+
+.price-label {
+  font-family: 'Playfair Display', serif;
+  color: black;
+  font-size: 1.1rem; /* Adjusted font size for readability */
+}
+
+
+
+/**===========user update profile============*/
+.register-container-style {
+  width: 80%; /* Adjust this value to your desired width */
+  max-width: 600px; /* Optional: Add a max-width to limit how wide it can be */
+  background-color: transparent; /* Remove any background color */
+  padding: 0; /* Remove padding that may be causing the light background effect */
+}
+
+/**===========user orders============*/
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff; /* White text */
+  background-color: #333; /* Dark background to contrast with white text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.table thead {
+  background-color: #f9a825; /* Yellow header */
+}
+
+.table th, .table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #555; /* Soft border between rows */
+}
+
+.table th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table tbody tr:hover {
+  background-color: #444; /* Darker hover effect */
+}
+
+.table tbody th, .table tbody td {
+  color: #fff; /* Ensure text remains white */
+}
+
+.table tbody th {
+  color: #f9a825; /* Yellow for numbering */
+}
+
+
+
+
+/**==========admin all orders============*/
+.custom-select {
+  border: none; /* Remove border */
+  background-color: transparent; /* Remove background color */
+  box-shadow: none; /* Remove shadow if any */
+}
+
+.custom-select .ant-select-selector {
+  border: none; /* Remove border from the select box */
+  background-color: transparent; /* Remove background color from the select box */
+}
+
+.custom-select .ant-select-item-option {
+  background-color: white; /* Set background color for dropdown options */
+}
+
+.custom-select .ant-select-dropdown {
+  background-color: white; /* Set background color for dropdown */
+  border: none; /* Remove border from dropdown */
+}
