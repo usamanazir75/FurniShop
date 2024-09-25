@@ -6,7 +6,8 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/authRout.js';
 import categoryRoutes from './routes/categoryRoutes.js';
 import productRoutes from './routes/productRoutes.js'
-import cors from 'cors'
+import cors from 'cors';
+
 
 
 //configure env
@@ -16,7 +17,7 @@ dotenv.config();
 connectDB();
 
 //rest object
-const app = express()
+const app = express();
 
 //middleware
 app.use(cors());
@@ -29,9 +30,9 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
 //rest api
-app.get('/', (req,res) => {
-    res.send("<h1>Welcome to FunriShop</h1>")
-} )
+app.get("/",(req,res) => {
+    res.send("Welcome to the FURNI Shop A")
+})
 
 
 //port

@@ -49,7 +49,7 @@ const Header = () => {
               className="navbar-brand text-white"
               style={{ fontFamily: "Playfair Display, serif", fontSize: "1.75rem" }}
             >
-              <span className="brand-name">Furni</span>
+              <span className="brand-name">Furniture</span>
               <span className="brand-highlight">Shop</span>
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0" style={{ fontFamily: "Poppins, sans-serif" }}>

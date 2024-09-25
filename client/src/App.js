@@ -14,7 +14,6 @@ import AdminDashboard from "./pages/Admin/AdminDashboard";
 import AdminRoute from "./components/Routes/AdminRoute";
 import CreateCategory from "./pages/Admin/CreateCategory";
 import CreateProduct from "./pages/Admin/CreateProduct";
-import Users from "./pages/Admin/Users";
 import Orders from "./pages/user/Orders";
 import Profile from "./pages/user/Profile";
 import Products from "./pages/Admin/Products";
@@ -47,7 +46,6 @@ function App() {
           <Route path="admin/create-product" element={<CreateProduct/>} />
           <Route path="admin/product/:slug" element={<UpdateProduct/>} />
           <Route path="admin/products" element={<Products/>} />
-          <Route path="admin/users" element={<Users/>} />
           <Route path="admin/orders" element={<AdminOrders/>} />
         </Route>
         <Route path="/register" element={<Register />} />
